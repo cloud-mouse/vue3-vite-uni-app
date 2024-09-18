@@ -1,0 +1,107 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"wui-(.*)": "@/components/wlyyui/wui-$1/wui-$1.vue"
+		}
+	},
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "我的服务",
+				// #ifdef H5
+				"titleNView": false,
+				// #endif
+				"navigationStyle": "custom",
+				"mp-alipay": {
+					"allowsBounceVertical": "YES",
+					"transparentTitle": "always",
+					"defaultTitle": "",
+					"titlePenetrate": "YES"
+				}
+			},
+			"meta": {
+				"ignoreAuth": true
+			}
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			},
+			"meta": {
+				"ignoreAuth": true
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "登录",
+				"mp-alipay": {
+					"allowsBounceVertical": "YES",
+					"transparentTitle": "always",
+					"titlePenetrate": "YES"
+				}
+			},
+			"meta": {
+				"ignoreAuth": true
+			}
+		},
+		{
+			"path": "pages/notFound/404",
+			"style": {
+				"navigationBarTitleText": "Not Found",
+				"mp-alipay": {
+					"allowsBounceVertical": "YES",
+					"transparentTitle": "always",
+					"titlePenetrate": "YES"
+				}
+			},
+			"meta": {
+				"ignoreAuth": true
+			}
+		}
+	],
+	"subPackages": [
+		{
+			"root": "pages_webview",
+			"pages": [
+				{
+					"path": "h5_webview/index",
+					"style": {
+						"navigationBarTitleText": ""
+					},
+					"meta": {
+						"ignoreAuth": true
+					}
+				}
+			]
+		}
+	],
+	"globalStyle": {
+		"backgroundTextStyle": "dark",
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "WLYY UI",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F1F4FA",
+		"backgroundColorTop": "#F1F4FA",
+		"backgroundColorBottom": "#F1F4FA"
+	},
+	"tabBar": {
+		"color": "#474747",
+		"selectedColor": "#1B6B29",
+		"backgroundColor": "#FFFFFF",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": ""
+			},
+			{
+				"pagePath": "pages/mine/index",
+				"text": ""
+			}
+		]
+	}
+}

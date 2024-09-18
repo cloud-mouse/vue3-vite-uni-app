@@ -1,0 +1,103 @@
+@import './theme.scss';
+
+page {
+	--safe-area-inset-top: 0px;
+	--safe-area-inset-right: 0px;
+	--safe-area-inset-bottom: 0px;
+	--safe-area-inset-left: 0px;
+}
+@supports (bottom: constant(safe-area-inset-bottom)) {
+	page {
+		--safe-area-inset-top: calc(constant(safe-area-inset-top));
+		--safe-area-inset-right: calc(constant(safe-area-inset-right));
+		--safe-area-inset-bottom: calc(constant(safe-area-inset-bottom));
+		--safe-area-inset-left: calc(constant(safe-area-inset-left));
+	}
+}
+@supports (bottom: env(safe-area-inset-bottom)) {
+	page {
+		--safe-area-inset-top: calc(env(safe-area-inset-top));
+		--safe-area-inset-right: calc(env(safe-area-inset-right));
+		--safe-area-inset-bottom: calc(env(safe-area-inset-bottom));	// 34px
+		--safe-area-inset-left: calc(env(safe-area-inset-left));
+	}
+}
+
+@mixin text-cut {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin full-screen() {
+	// 视频全屏 按钮文字样式在视频内部
+	// 全屏后 屏幕宽高不用颠倒
+	$width: 100vw;
+	$height: 100vh;
+	$w: calc(#{$height} * 16 / 9);	// 全屏下 视频宽度
+	$side: calc((#{$width} - #{$w}) / 2);	// 视频两侧空余宽度
+
+	padding: var(--safe-area-inset-bottom) $side;
+}
+
+.bg-img {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.bg-mask {
+	background-color: #333333;
+	position: relative;
+	& view {
+		z-index: 5;
+		position: relative;
+	}
+	&::after {
+		content: "";
+		border-radius: inherit;
+		width: 100%;
+		height: 100%;
+		display: block;
+		background-color: rgba(0, 0, 0, 0.4);
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+	}
+}
+.text-white {
+	color: #fff;
+}
+.btn {
+	position: relative;
+	border: 0rpx;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 0 30rpx;
+	height: 64rpx;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	overflow: visible;
+	margin-left: initial;
+	transform: translate(0rpx, 0rpx);
+	margin-right: initial;
+	background-color: #8799a3;
+	color: #fff;
+}
+
+.load-text {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 80%;
+	height: 50rpx;
+	line-height: 50rpx;
+	text-align: center;
+	@include text-cut();
+}

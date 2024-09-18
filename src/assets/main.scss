@@ -1,0 +1,127 @@
+view,
+scroll-view,
+swiper,
+match-media,
+movable-area,
+movable-view,
+cover-view,
+cover-image,
+icon,
+text,
+rich-text,
+progress,
+button,
+checkboxe,
+ditor,
+form,
+input,
+label,
+picker,
+picker-view,
+radio,
+slider,
+switch,
+textarea,
+navigator,
+audio,
+camera,
+image,
+video,
+live-player,
+live-pusher,
+map,
+canvas,
+web-view,
+:before,
+:after {
+  box-sizing: border-box;
+}
+uni-scroll-view .uni-scroll-view::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+  color: transparent;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}
+page {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.border-base {
+  border: 1px solid #e5e5e5;
+  border-radius: 8rpx;
+}
+.border-t-base {
+  border-top: solid 1rpx #e5e5e5;
+}
+.border-b-base {
+  border-right: solid 1rpx #e5e5e5;
+}
+.border-r-base {
+  border-right: solid 1rpx #e5e5e5;
+}
+.border-l-base {
+  border-left: solid 1rpx #e5e5e5;
+}
+.border-x-base {
+  border-right: solid 1rpx #e5e5e5;
+  border-left: solid 1rpx #e5e5e5;
+}
+.border-y-base {
+  border-top: solid 1rpx #e5e5e5;
+  border-bottom: solid 1rpx #e5e5e5;
+}
+.border-b-dashed {
+  border-bottom: dashed 1px #b4b4b4;
+}
+.border-primary {
+  border: 1rpx solid #1B6B29;
+}
+.box-shadow {
+  box-shadow: 0 12rpx 32rpx rgba(240, 248, 255, 1);
+}
+
+.footer-btn-box {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.footer-gradient-bg {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.ellipsis--l2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.bg-gradient {
+  background: linear-gradient(180deg, #39894A 0%, #459981 100%);
+}
+.bg-gradient-f5 {
+  background: linear-gradient(180deg, #E9F4EE 0%, #F5F5F5 100%);
+}
+.bg-gradient-f {
+  background: linear-gradient(180deg, #E9F4EE 0%, #ffffff 100%);
+}

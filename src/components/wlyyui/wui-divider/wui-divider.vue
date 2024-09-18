@@ -1,0 +1,119 @@
+<!--（手机号： 1 526  7 0 137  5  6，身份证尾号： 1  9193  5）-->
+<template>
+	<view class="wui-divider__wrap" :style="{ height: height + 'rpx' }">
+		<view class="wui-divider__line" :style="{ width: width, background: dividerColor, top: getTop }"> </view>
+		<view class="wui-divider__text-box" :style="{ backgroundColor: backgroundColor }">
+			<slot></slot>
+			<text
+				class="wui-divider__text"
+				:style="{
+					fontWeight: fontWeight,
+					color: color,
+					fontSize: size + 'rpx',
+					lineHeight: size + 'rpx'
+				}"
+				v-if="text"
+				>{{ text }}</text
+			>
+		</view>
+	</view>
+</template>
+
+<script>
+export default {
+	name: 'wui-divider',
+	props: {
+		text: {
+			type: String,
+			default: ''
+		},
+		//divider占据高度，单位rpx
+		height: {
+			type: [Number, String],
+			default: 100
+		},
+		//divider宽度
+		width: {
+			type: String,
+			default: '400rpx'
+		},
+		//divider颜色
+		dividerColor: {
+			type: String,
+			default: '#CCCCCC'
+		},
+		//文字颜色
+		color: {
+			type: String,
+			default: '#B2B2B2'
+		},
+		//文字大小 rpx
+		size: {
+			type: [Number, String],
+			default: 24
+		},
+		fontWeight: {
+			type: [Number, String],
+			default: 400
+		},
+		//背景颜色，和当前页面背景色保持一致
+		backgroundColor: {
+			type: String,
+			default: '#FFFFFF'
+		}
+	},
+	computed: {
+		getTop() {
+			return Number(this.height) / 2 + 'rpx';
+		}
+	}
+};
+</script>
+
+<style scoped>
+.wui-divider__wrap {
+	/* #ifndef APP-NVUE */
+	width: 100%;
+	display: flex;
+	box-sizing: border-box;
+	/* #endif */
+	position: relative;
+	text-align: center;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.wui-divider__line {
+	position: absolute;
+	/* #ifdef APP-NVUE */
+	height: 0.5px;
+	/* #endif */
+
+	/* #ifndef APP-NVUE */
+	height: 1px;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: scaleY(0.5) translate3d(-50%, -50%, 0);
+	transform: scaleY(0.5) translate3d(-50%, -50%, 0);
+	/* #endif */
+}
+
+.wui-divider__text-box {
+	position: relative;
+	text-align: center;
+	padding: 0 6rpx;
+	z-index: 1;
+	/* #ifndef APP-NVUE */
+	display: flex;
+	/* #endif */
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.wui-divider__text {
+	padding: 0 12rpx;
+}
+</style>

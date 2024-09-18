@@ -1,0 +1,83 @@
+/*
+  WlyyUI组件内置的基础变量
+  1.如果你是组件使用者，你可以通过修改这些变量的值来定制自己的组件主题，实现自定义主题功能
+  2.如果全局修改需要在项目根目录下App.vue文件中引入此css文件
+  3.如果组件中有props属性是针对颜色设置（默认为空值），则优先级：props变量（如果有传值）> 全局主题色
+*/
+
+/* #ifndef APP-NVUE */
+page {
+  /* 行为相关颜色 */
+   --wui-color-primary: #1B6B29;
+  --wui-color-success: #09be4f;
+  --wui-color-warning: #ffb703;
+  --wui-color-danger: #ff2b2b;
+  --wui-color-purple: #6831ff;
+
+  /* 文字基本颜色、其他辅助色 */
+  /* 用于重量级文字信息、标题 */
+  --wui-color-title: #181818;
+  /* 用于普通级段落信息、引导词 */
+  --wui-color-section: #333333;
+  /* 用于次要标题内容 */
+  --wui-color-subtitle: #7f7f7f;
+  /* 用于底部标签、描述、次要文字信息 */
+  --wui-color-label: #b2b2b2;
+  /* 用于辅助、次要信息、禁用文字等。如：待输入状态描述文字，已点击按钮文字 */
+  --wui-color-minor: #cccccc;
+  --wui-color-white: #ffffff;
+  /* 链接颜色 */
+  --wui-color-link: #1396ff;
+
+  /* 背景颜色 */
+  --wui-bg-color: #ffffff;
+  /* 页面背景底色 */
+  --wui-bg-color-grey: #f1f4fa;
+  /* 内容模块底色 */
+  --wui-bg-color-content: #f8f8f8;
+  --wui-bg-color-red: rgba(255, 43, 43, 0.05);
+  --wui-bg-color-yellow: rgba(255, 183, 3, 0.1);
+  --wui-bg-color-purple: rgba(104, 49, 255, 0.05);
+  --wui-bg-color-green: rgba(9, 190, 79, 0.05);
+  /* 点击背景色 */
+  --wui-bg-color-hover: rgba(0, 0, 0, 0.2);
+  /* 遮罩颜色 */
+  --wui-bg-color-mask: rgba(0, 0, 0, 0.6);
+
+  /* 边框颜色 */
+  --wui-color-border: #eeeeee;
+
+  /* 阴影颜色 */
+  --wui-color-shadow: rgba(2, 4, 38, 0.05);
+
+  /*禁用态的透明度 */
+  --wui-opacity-disabled: 0.5;
+
+  /* 图标尺寸 */
+  --wui-img-size-sm: 48rpx;
+  --wui-img-size-base: 56rpx;
+  --wui-img-size-middle: 64rpx;
+  --wui-img-size-lg: 96rpx;
+
+  /* 图片尺寸 */
+  --wui-img-sm: 60rpx;
+  --wui-img-base: 120rpx;
+  --wui-img-lg: 240rpx;
+
+  /* Border Radius */
+  --wui-border-radius-sm: 16rpx;
+  --wui-border-radius-base: 24rpx;
+  --wui-border-radius-lg: 48rpx;
+  --wui-border-radius-circle: 50%;
+
+  /* 水平间距 */
+  --wui-spacing-row-sm: 16rpx;
+  --wui-spacing-row-base: 24rpx;
+  --wui-spacing-row-lg: 32rpx;
+
+  /* 垂直间距 */
+  --wui-spacing-col-sm: 8rpx;
+  --wui-spacing-col-base: 16rpx;
+  --wui-spacing-col-lg: 24rpx;
+}
+/* #endif */
